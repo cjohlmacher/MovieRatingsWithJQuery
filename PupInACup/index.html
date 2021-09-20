@@ -74,16 +74,24 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script>
+  //Console log message when DOM is ready
   console.log("Let's get ready to party with jQuery!");
+  //Give all images in an article tag the class "image-center"
   $('article img').addClass("image-center");
+  //Remove the last paragraph in the article
   $('p').last().remove();
+  //Set the title's font size to a random number between 0 and 100
   $('#title').css("font-size",Math.random()*100);
+  //Add an item to the list
   $('ol').append("<li>I'm taking him home in that cup</li>");
+  //Empty the aside, and make the list apolgize for its existence
   $('aside').children().remove()
   $('aside').append("<p>I'm so sorry. A list never should have existed here.</p>");
+  //Have the background color change in response to the three inputs
   $('div.mb-5').on('change',function(){
     $('body').css("background-color",`rgb(${$('input').eq(0).val()},${$('input').eq(2).val()},${$('input').eq(1).val()}`);
   });
+  //Add an event listener so that image is removed on click.
   $('img').on('click',function(){
     this.remove();
   });
